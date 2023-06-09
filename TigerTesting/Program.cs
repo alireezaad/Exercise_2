@@ -12,12 +12,12 @@ var reader = services.ExecuteReader("Select s.Name,s.Age,isnull(c.CourseName,'Ma
 Services services2 = new Services();
 var reader2 = services2.ExecuteReader("SELECT Students.ID, Students.Name, COUNT(Courses.Id) AS CourseCount FROM Students LEFT JOIN Courses ON Students.Id = Courses.StudentID GROUP BY Students.ID, Students.Name");
 
-//to do 3: Write a query to retrieve the count of courses each student has enrolled in.
+//to do 3:Write a query to retrieve the students who have not enrolled in any course.
 Services services3 = new Services();
 var reader3 = services3.ExecuteReader("select s.Id,s.Name from students s left join Courses c on s.Id = c.StudentId where c.StudentId is null");
 
 
-//to do 4: Write a query to retrieve the count of courses each student has enrolled in.
+//to do 4: Write a query to retrieve the students who are enrolled in a specific course.
 Services services4 = new Services();
 var reader4 = services4.ExecuteReader("select s.Id,s.Name from students s inner join Courses c on s.Id = c.StudentId where c.CourseName = 'gaming'");
 
